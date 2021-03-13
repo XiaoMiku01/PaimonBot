@@ -47,7 +47,7 @@ def GetInfo(Uid, ServerID):
                 'Accept-Encoding': 'gzip, deflate',
                 'Accept-Language': 'zh-CN,en-US;q=0.8',
                 'X-Requested-With': 'com.mihoyo.hyperion',
-                'Cookie':'UM_distinctid=174bba7e7813bc-0d93fbb0224054-333376b-144000-174bba7e782b9f; mi18nLang=zh-cn; _ga_E36KSL9TFE=GS1.1.1611330164.2.1.1611330369.0; _gid=GA1.2.953430580.1612083770; CNZZDATA1275023096=569536731-1600871848-https%253A%252F%252Fys.mihoyo.com%252F%7C1612096669; _ga_KJ6J9V9VZQ=GS1.1.1612097208.2.1.1612097227.0; _ga=GA1.2.2019832523.1600876290; login_uid=940759; login_ticket=Nx3d6xwZdmjt5FK6kJSZsytonYJIr89SY4nccNkc; account_id=940759; cookie_token=iFzIMCAU2e1txkG1DMSVdwSv7woDu598l1MJJMgn; ltoken=LdNORo3hbgOttkN7WQ9W4gjsk6BJyEYKHMtMYFyB; ltuid=940759'
+                'Cookie':''
             }
         )
         return (req.text)
