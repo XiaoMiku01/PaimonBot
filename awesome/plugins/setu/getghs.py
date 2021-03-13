@@ -1,5 +1,5 @@
 import requests
-apikey = '299334966043a79b3039d1'
+apikey = ''
 async def ghs_pic()-> str:
     try:
         req_url="https://api.lolicon.app/setu/"
