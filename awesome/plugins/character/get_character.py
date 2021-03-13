@@ -87,4 +87,4 @@ async def get_mz(name_mz:str) ->str:
     elif num==0:
         return "你搁这原地tp呢？"
     else:
-        return f"查询错误!你家{name}有{num}命？？"
+        return f"查询错误!你家{name}有{num}命？？" 
