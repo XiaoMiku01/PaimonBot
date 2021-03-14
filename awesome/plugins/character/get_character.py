@@ -2,8 +2,17 @@ import requests
 import bs4
 import json
 import re
-
+def nic2name(name):
+    with open('./nicname.json','r', encoding='utf-8') as f:
+        all = json.load(f)
+        f.close()
+    for i in all:
+        for x in i.values():
+            if name in x:
+                return x[0]
+    return name
 def get_json(name: str) -> dict:
+    name=nic2name(name)
     res = requests.get(f'https://genshin.minigg.cn/?data={name}')
     soup = bs4.BeautifulSoup(res.text,"lxml").body
     character_json = json.loads(soup.text)
@@ -37,6 +46,7 @@ def get_icon(data: dict) -> str:
 
 def get_character(name: str) -> str:
     try:
+        name = nic2name(name)
         data0 =get_json(name)
         data = data0['角色信息']
     except:
@@ -56,8 +66,10 @@ async def get_mz(name_mz:str) ->str:
     name_mz=name_mz.replace(" ","")
     try:
         name=re.findall(r'(.*)([零一二三四五六七八九0123456789]{1})命', name_mz)[0][0]
+        name=nic2name(name)
     except:
         name=name_mz
+        name=nic2name(name)
     try:
         num=int(re.search('\d{1,5}', name_mz).group(0))
     except:
@@ -87,4 +99,6 @@ async def get_mz(name_mz:str) ->str:
     elif num==0:
         return "你搁这原地tp呢？"
     else:
-        return f"查询错误!你家{name}有{num}命？？" 
+        return f"查询错误!你家{name}有{num}命？？"
+if __name__ == '__main__':
+    print(get_character('公子'))
