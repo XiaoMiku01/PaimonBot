@@ -4,6 +4,7 @@ import re
 
 import bs4
 import requests
+from xpinyin import Pinyin
 
 
 def nic2name(name):
@@ -56,9 +57,8 @@ def get_icon(data: dict) -> str:
 
 
 def get_character(name: str) -> str:
-    global nick_name
+    nick_name = nic2name(name)
     try:
-        nick_name = nic2name(name)
         data0 = get_json(nick_name)
         data = data0['角色信息']
         if nick_name == '旅行者':
@@ -68,7 +68,12 @@ def get_character(name: str) -> str:
         if correct_result is None:
             return f"派蒙这里没找到{name}，可能是派蒙的错，可能是你输入的名字不正确哦。"
         else:
-            return f"派蒙这里没找到{name}，你是要搜索{correct_result}吗?"
+            if len(correct_result) > 1:
+                return f"派蒙这里没找到{name}，你是要搜索如下的角色吗?\n{montage_result(correct_result)}"
+            elif len(correct_result) < 1:
+                return f"派蒙这里没找到{name}，可能是派蒙的错，可能是你输入的名字不正确哦。"
+            else:
+                return f"派蒙这里没找到{name}，你是要搜索{correct_result[0]}吗"
     try:
         result = nick_name + '\n' + get_icon(data0) + '\n' + '命之座：' + str(data['命之座']) + '\n' + '所属：' + str(
             data['所属']) + '\n' + '武器类型：' + \
@@ -122,13 +127,32 @@ async def get_mz(name_mz: str) -> str:
         return f"查询错误!你家{name}有{num}命？？"
 
 
-def auto_correct(name: str) -> str:
-    with open("character_index.json", "r", encoding="utf-8") as f:
+def auto_correct(name: str) -> list:
+    with open("./character_index.json", "r", encoding="utf-8") as f:
         character_index = json.loads(f.read())
+    input_pin_yin_list = Pinyin().get_pinyin(name).split("-")
+    result_cache = []
+    result = []
     for index_name in character_index:
-        if difflib.SequenceMatcher(None, index_name, name).quick_ratio() >= 0.5:
-            return index_name
+        true_name = list(index_name.keys())[0]
+        for input_pin_yin in input_pin_yin_list:
+            for true_pin_yin in index_name[true_name]:
+                if difflib.SequenceMatcher(None, true_pin_yin, input_pin_yin).quick_ratio() >= 1:
+                    result_cache.append(true_name)
+        if difflib.SequenceMatcher(None, true_name, name).quick_ratio() >= 0.3:
+            result_cache.append(true_name)
+    for result_repeat in result_cache:
+        if result_cache.count(result_repeat) > 1 and not result_repeat in result:
+            result.append(result_repeat)
+    return result
+
+
+def montage_result(correct_result: list) -> str:
+    cause = correct_result[0]
+    for i in range(1, len(correct_result)):
+        cause = cause + "\n" + correct_result[i]
+    return cause
 
 
 if __name__ == '__main__':
-    print(get_character('爷'))
+    print(get_character('可aaa'))
