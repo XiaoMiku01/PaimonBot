@@ -8,7 +8,7 @@ import random
 import hashlib
 import requests
 
-mhyVersion = "2.4.0"
+mhyVersion = "2.3.0"
 
 
 def md5(text):
@@ -21,8 +21,8 @@ def DSGet():
     global mhyVersion
     if (mhyVersion == "2.1.0"):
         n = md5(mhyVersion)
-    elif (mhyVersion == "2.4.0"):
-        n = "pbcfcvnfsm5s2w4x3lsq8caor7v8nlqm"
+    elif (mhyVersion == "2.3.0"):
+        n = "h8w582wxwgqvahcdkpvdhbh2w9casgfl"
     else:
         mhyVersion = "2.4.0"
         n = "pbcfcvnfsm5s2w4x3lsq8caor7v8nlqm"
@@ -47,7 +47,7 @@ def GetInfo(Uid, ServerID):
                 'Accept-Encoding': 'gzip, deflate',
                 'Accept-Language': 'zh-CN,en-US;q=0.8',
                 'X-Requested-With': 'com.mihoyo.hyperion',
-                'Cookie':''
+                'Cookie':'UM_distinctid=174bba7e7813bc-0d93fbb0224054-333376b-144000-174bba7e782b9f; mi18nLang=zh-cn; _ga_KJ6J9V9VZQ=GS1.1.1608462752.1.1.1608463916.0; _ga_E36KSL9TFE=GS1.1.1611330164.2.1.1611330369.0; _ga=GA1.2.2019832523.1600876290; _gid=GA1.2.483837576.1611853876; _gat=1; CNZZDATA1275023096=569536731-1600871848-https%253A%252F%252Fys.mihoyo.com%252F%7C1611848972; login_uid=161842485; login_ticket=0AmiP9kjJCta0aALYXio3N7Gger5IxPv2qbUfPzu; account_id=161842485; cookie_token=mqUNVfRJsmcFoQ7vH6cneLWbKLfxJDIPxYa9F5ut; ltoken=RJ79SPBKVj7DofBvchgLuOpA5dMD7SvWQGuuLQZ8; ltuid=161842485'
             }
         )
         return (req.text)
@@ -152,10 +152,10 @@ async def get_weather_of_city(uid: str) -> str:
     if (len(uid) == 9):
         if (uid[0] == "1"):
             UidInfo = JsonAnalysis(GetInfo(uid, "cn_gf01"))
-            return  "查询成功：\r\n" + UidInfo
+            return  f"{uid}查询成功：\r\n" + UidInfo
         elif (uid[0] == "5"):
             UidInfo = JsonAnalysis(GetInfo(uid, "cn_qd01"))
-            return "查询成功：\r\n" + UidInfo
+            return f"{uid}查询成功：\r\n" + UidInfo
         else:
             return "UID输入有误！！\r\n请检查UID是否为国服UID！"
     else:
