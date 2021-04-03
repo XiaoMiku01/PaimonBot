@@ -1,35 +1,38 @@
-#https://github.com/Womsxd/YuanShen_User_Info
-import json
-import time
-import string
-import random
+# https://github.com/Womsxd/YuanShen_User_Info
 import hashlib
+import json
+import random
+import string
 import sys
+import time
+
 import requests
 
 mhyVersion = "2.3.0"
 cache_Cookie = ""
 
+
 def md5(text):
     md5 = hashlib.md5()
     md5.update(text.encode())
-    return (md5.hexdigest())
+    return md5.hexdigest()
 
 
 def DSGet():
     n = "h8w582wxwgqvahcdkpvdhbh2w9casgfl"
     i = str(int(time.time()))
     r = ''.join(random.sample(string.ascii_lowercase + string.digits, 6))
-    c = md5("salt=" + n + "&t="+ i + "&r=" + r)
-    return (i + "," + r + "," + c)
+    c = md5("salt=" + n + "&t=" + i + "&r=" + r)
+    return i + "," + r + "," + c
+
 
 async def GetInfo(Uid, ServerID="cn_gf01"):
-    if Uid[0]=='5':
-        ServerID="cn_qd01"
+    if Uid[0] == '5':
+        ServerID = "cn_qd01"
     try:
         req = requests.get(
-            url = "https://api-takumi.mihoyo.com/game_record/genshin/api/index?server="+ ServerID +"&role_id=" + Uid ,
-            headers = {
+            url="https://api-takumi.mihoyo.com/game_record/genshin/api/index?server=" + ServerID + "&role_id=" + Uid,
+            headers={
                 'Accept': 'application/json, text/plain, */*',
                 'DS': DSGet(),
                 'Origin': 'https://webstatic.mihoyo.com',
@@ -47,9 +50,8 @@ async def GetInfo(Uid, ServerID="cn_gf01"):
         return data
 
     except:
-        print ("访问失败，请重试！")
+        print("访问失败，请重试！")
         sys.exit(1)
-
 
 
 if __name__ == "__main__":

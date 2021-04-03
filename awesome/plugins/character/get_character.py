@@ -65,15 +65,12 @@ def get_character(name: str) -> str:
             data["简介"] = '无'
     except:
         correct_result = auto_correct(nick_name)
-        if correct_result is None:
+        if len(correct_result) > 1:
+            return f"派蒙这里没找到{name}，你是要搜索如下的角色吗?\n{montage_result(correct_result)}"
+        elif len(correct_result) < 1:
             return f"派蒙这里没找到{name}，可能是派蒙的错，可能是你输入的名字不正确哦。"
         else:
-            if len(correct_result) > 1:
-                return f"派蒙这里没找到{name}，你是要搜索如下的角色吗?\n{montage_result(correct_result)}"
-            elif len(correct_result) < 1:
-                return f"派蒙这里没找到{name}，可能是派蒙的错，可能是你输入的名字不正确哦。"
-            else:
-                return f"派蒙这里没找到{name}，你是要搜索{correct_result[0]}吗"
+            return f"派蒙这里没找到{name}，你是要搜索{correct_result[0]}吗"
     try:
         result = nick_name + '\n' + get_icon(data0) + '\n' + '命之座：' + str(data['命之座']) + '\n' + '所属：' + str(
             data['所属']) + '\n' + '武器类型：' + \
@@ -90,7 +87,7 @@ def get_character(name: str) -> str:
 async def get_mz(name_mz: str) -> str:
     name_mz = name_mz.replace(" ", "")
     try:
-        name = re.findall(r'(.*)([零一二三四五六七八九0123456789]{1})命', name_mz)[0][0]
+        name = re.findall(r'(.*)([零一二三四五六七八九0123456789])命', name_mz)[0][0]
         name = nic2name(name)
     except:
         name = name_mz
@@ -99,7 +96,7 @@ async def get_mz(name_mz: str) -> str:
         num = int(re.search('\d{1,5}', name_mz).group(0))
     except:
         try:
-            num = char_to_char(re.findall(r'(.*)([零一二三四五六七八九0123456789]{1})命', name_mz)[0][1])
+            num = char_to_char(re.findall(r'(.*)([零一二三四五六七八九0123456789])命', name_mz)[0][1])
         except:
             num = -1
     try:
