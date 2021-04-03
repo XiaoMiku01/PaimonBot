@@ -1,7 +1,7 @@
 from nonebot import on_command, CommandSession
 
 
-@on_command('help', aliases=('帮助'))
+@on_command('help', aliases='帮助')
 async def help(session: CommandSession):
     await session.finish('1.发送 [查询<空格><uid>] 查询米游社资料\neg. 查询 100000001\n2.发送 [武器/今日武器] 查看今日武器材料和武器\n3.发送 [天赋/今日天赋] '
                          '查看今日天赋材料和人物\n '

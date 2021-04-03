@@ -1,5 +1,6 @@
-import requests
 import re
+
+import requests
 
 codeType = {
     'py': ['python', 'py'],
@@ -10,7 +11,7 @@ codeType = {
     'c': ['c', 'c'],
     'c#': ['csharp', 'cs'],
     'go': ['go', 'go'],
-    'asm':['assembly','asm']
+    'asm': ['assembly', 'asm']
 }
 
 
@@ -24,7 +25,7 @@ async def run(str):
         "Authorization": "Token 0123456-789a-bcde-f012-3456789abcde",
         "content-type": "application/"
     }
-    dataJson = {
+    data_json = {
         "files": [
             {
                 "name": f"main.{codeType[lang][1]}",
@@ -34,10 +35,10 @@ async def run(str):
         "stdin": "",
         "command": ""
     }
-    res = requests.post(url=f'https://glot.io/run/{codeType[lang][0]}?version=latest', headers=headers, json=dataJson)
+    res = requests.post(url=f'https://glot.io/run/{codeType[lang][0]}?version=latest', headers=headers, json=data_json)
     if res.status_code == 200:
         if res.json()['stdout'] != "":
-            if len(res.json()['stdout'])<200:
+            if len(res.json()['stdout']) < 200:
                 return res.json()['stdout']
             else:
                 return "返回字符过长！你在拿派蒙寻开心是吧！"
