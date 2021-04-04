@@ -28,19 +28,20 @@ Linux下运行 ./go-cqhttp for linux
 python3 bot.py
 ```
 7.搭建成功，发送help获取菜单  
-![img](https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/help.png)
+<img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/help.png" width="250px" />  
 ### 目前功能
 1.米游社资料查询  
-![img](https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/mys.png)  
+<img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/mys.png" width="250px" />  
 2.每日副本查询  
-![img](https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/challenge.png)  
+<img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/challenge.png" width="250px" />  
 3.角色资料查询  
-![img](https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/challenge2.png)
-![img](https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/challenge.png)  
+<img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/character2.png" width="250px" />
+<img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/character.png" width="250px" />
+  
 4.在线运行代码(目前支持py / js / c / c++ / c# / java)  
-![img](https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/code.png)  
+<img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/code.png" width="250px" />    
 5.群聊防撤回，戳一戳回复  
-![img](https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/other.png)  
+<img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/other.png" width="250px" />  
 6.~~涩图~~(不稳定,望谅解！ps超级用户可以回复**撤回**可以撤回最后一条涩图)  
 ### 注意事项
 1.Bot账号请勿使用低等级小号，会导致风控使信息发不出来  
