@@ -7,7 +7,7 @@ import hashlib
 import sys
 import requests
 from httpx import AsyncClient
-import noneboot
+import nonebot
 
 mhyVersion = "2.3.0"
 cookie_list = nonebot.get_driver().config.myscookie
