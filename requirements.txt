@@ -1,0 +1,9 @@
+nb-cli
+nonebot~=1.8.2
+lxml>=4.6.3
+requests~=2.25.1
+beautifulsoup4~=4.9.3
+xpinyin~=0.7.6
+MsgPack>=1.0.2
+ujson>=4.0.2
+Pillow~=8.2.0
