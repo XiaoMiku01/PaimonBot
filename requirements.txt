@@ -1,4 +1,5 @@
 nb-cli
+nonebot-adapter-cqhttp
 nonebot~=1.8.2
 lxml>=4.6.3
 requests~=2.25.1
