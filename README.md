@@ -35,8 +35,8 @@ python3 bot.py
 2.每日副本查询  
 ![img](https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/challenge.png)  
 3.角色资料查询  
-![img](https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/challenge2.png)
-![img](https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/challenge.png)  
+![img](https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/character2.png)
+![img](https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/character.png)  
 4.在线运行代码(目前支持py / js / c / c++ / c# / java)  
 ![img](https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/code.png)  
 5.群聊防撤回，戳一戳回复  
