@@ -1,11 +1,11 @@
-from nonebot import on_startswith
+from nonebot import on_command
 from nonebot.adapters.cqhttp import Event, Bot, Message
 
 from .getImg import draw_pic
 
 import re
 
-query = on_startswith('查询')
+query = on_command('查询')
 
 
 @query.handle()
