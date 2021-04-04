@@ -37,6 +37,7 @@ python3 bot.py
 3.角色资料查询  
 <img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/character2.png" width="250px" />
 <img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/character.png" width="250px" />
+  
 4.在线运行代码(目前支持py / js / c / c++ / c# / java)  
 <img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/code.png" width="250px" />    
 5.群聊防撤回，戳一戳回复  
