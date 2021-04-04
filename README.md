@@ -38,7 +38,7 @@ python3 bot.py
 <img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/character2.png" width="250px" />
 <img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/character.png" width="250px" />
 4.在线运行代码(目前支持py / js / c / c++ / c# / java)  
-<img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/code.png" width="250px" />  
+<img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/code.png" width="250px" />    
 5.群聊防撤回，戳一戳回复  
 <img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/other.png" width="250px" />  
 6.~~涩图~~(不稳定,望谅解！ps超级用户可以回复**撤回**可以撤回最后一条涩图)  
