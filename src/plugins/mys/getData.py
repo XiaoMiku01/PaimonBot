@@ -12,9 +12,6 @@ import nonebot
 mhyVersion = "2.3.0"
 cookie_list = nonebot.get_driver().config.myscookie
 
-for i in cookies:
-    cookie_list.append(i['cookie'])
-
 
 def cache_Cookie():
     return random.choice(cookie_list)
