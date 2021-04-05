@@ -1,8 +1,18 @@
 ## 派蒙Bot / PaimonBot
 基于[Mrs4s](https://github.com/Mrs4s) / [go-cqhttp](https://github.com/Mrs4s/go-cqhttp) 和 [nonebot](https://github.com/nonebot) / [nonebot2](https://github.com/nonebot/nonebot2) 的原神QQ群聊机器人
-
+#### 特别鸣谢  
+[MingxuanGame](https://github.com/MingxuanGame) 的人物武器名字自动纠正功能  
+[小灰灰](https://github.com/MiniGrayGay) 的人物武器信息api  
 ### 环境
-请务必使用**Python3.7**以上版本！！
+请务必使用**Python3.7**以上版本！！ 
+
+### 更新记录
+2021-4-5 优化涩图速度增加，增加涩图关检测搜索  
+2021-4-3 全部移植到nonebot2,增加防撤回，戳一戳等功能  
+.  
+.  
+.  
+2021-3-14 第一次更新  
 ### 部署方法
 1 .卸载以前的nonebot  
 ```shell
