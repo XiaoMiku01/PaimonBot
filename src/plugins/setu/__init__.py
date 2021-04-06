@@ -16,12 +16,13 @@ async def _(bot: Bot, event: Event):
     key = str(event.get_message()).strip()
     pic = await ghs_pic3(key)
     try:
-        if cd>60 or event.get_user_id() in nonebot.get_driver().config.superusers:
+        if cd>cdTime or event.get_user_id() in nonebot.get_driver().config.superusers:
             await setu.send('给大佬递图', at_sender=True)
             mid = await setu.send(message=Message(pic))
         else:
-            await setu.send(f'不要发的太快，冲多了对身体不好，你的CD还有{60-cdTime}秒', at_sender=True)
-    except:
+            await setu.send(f'不要发的太快，冲多了对身体不好，你的CD还有{cdTime-cd}秒', at_sender=True)
+    except Exception as e:
+        print(e)
         await setu.send(message=Message('消息被风控，或者api调用达到上限，派蒙不背锅'), at_sender=True)
 
 
