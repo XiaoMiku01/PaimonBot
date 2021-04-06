@@ -8,7 +8,6 @@ if nonebot.get_driver().config.setuproxy == 'True':
     proxy = 'i.pixiv.cat'
 else:
     proxy = 'disable'
-
 async def ghs_pic3(keyword='') -> str:
     async with AsyncClient() as client:
         try:
@@ -25,13 +24,15 @@ async def ghs_pic3(keyword='') -> str:
             base64 = await downPic(setu_url)
             setu_pid = res.json()['data'][0]['pid']
             setu_author = res.json()['data'][0]['author']
+            pic ="[CQ:image,file=base64://" + base64 + "]"
             local_img_url = "title:" + setu_title + "[CQ:image,file=base64://" + base64 + "]" + "pid:" + str(
                 setu_pid) + " 画师:" + setu_author
             # return setu_url
-            return local_img_url
+            # return local_img_url
+            return pic
         except Exception as e:
             print(e)
-            return "阿这，出了一点问题"
+            return f"图库中没有搜到关于{keyword}的图。"
 
 
 async def downPic(url) -> str:
@@ -49,4 +50,4 @@ async def downPic(url) -> str:
 
 
 if __name__ == '__main__':
-    downPic(ghs_pic())
+    downPic(ghs_pic3())

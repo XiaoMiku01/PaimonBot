@@ -10,13 +10,14 @@ codeType = {
     'c': ['c', 'c'],
     'c#': ['csharp', 'cs'],
     'go': ['go', 'go'],
-    'asm': ['assembly', 'asm']
+    'asm':['assembly','asm']
 }
 
 
-async def run(str):
+async def run(strcode):
+    strcode = strcode.replace('&amp;', '&').replace('&#91;', '[').replace('&#93;', ']')
     try:
-        a = re.findall(r'(py|php|java|cpp|js|c#|c|go|asm)(\n|\r)((?:.|\n)+)', str)[0]
+        a = re.findall(r'(py|php|java|cpp|js|c#|c|go|asm)(\n|\r)((?:.|\n)+)', strcode)[0]
     except:
         return "暂不支持该语言，目前仅支持c/cpp/c#/py/php/go/java/js。"
     lang, code = a[0], a[2]
@@ -37,7 +38,7 @@ async def run(str):
     res = requests.post(url=f'https://glot.io/run/{codeType[lang][0]}?version=latest', headers=headers, json=dataJson)
     if res.status_code == 200:
         if res.json()['stdout'] != "":
-            if len(res.json()['stdout']) < 200:
+            if len(repr(res.json()['stdout']))<100:
                 return res.json()['stdout']
             else:
                 return "返回字符过长！你在拿派蒙寻开心是吧！"
