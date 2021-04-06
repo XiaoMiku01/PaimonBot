@@ -1,0 +1,21 @@
+# backup files
+*~
+*.swp
+
+# cache
+*.pyc
+.cache/
+.tox/
+.eggs/
+.pytest_cache/
+__pycache__/
+
+# tags
+.tags*
+tags*
+
+# setuptools
+build/
+dist/
+*.egg-info/
+*.dist-info/
