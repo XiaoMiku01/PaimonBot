@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import nonebot
 from nonebot.adapters.cqhttp import Bot as CQHTTPBot
 
