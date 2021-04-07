@@ -13,4 +13,4 @@ async def _(bot: Bot, event: Event):
                       + '6.发送 [角色资料<空格>名字 ] 查看人物简介\neg. 角色资料 琴\n'
                       + '7.发送 [命座<空格>名字 ] 查看人物命座\neg. 命座 [琴/琴四命]\n '
                       + '8.发送[涩图/setu/无内鬼]（不稳定）\n'
-                      + '发送前记得要@派蒙哦！')
+                      + '项目地址：github.com/XiaoMiku01/PaimonBot')
