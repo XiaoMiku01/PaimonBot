@@ -5,7 +5,7 @@
 [小灰灰](https://github.com/MiniGrayGay) 的人物武器信息api  
 ### 环境
 请务必使用**Python3.7**以上版本！！ 
-尽量在linux下运行。windows下可能会有各种报错。  
+尽量在linux下运行。  windows下可能会有各种报错。  
 
 ### 更新记录  
 2021-4-7 更新武器资料,修复windows下路径bug  
