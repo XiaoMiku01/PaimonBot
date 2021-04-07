@@ -3,9 +3,10 @@
 #### 特别鸣谢  
 [MingxuanGame](https://github.com/MingxuanGame) 的人物武器名字自动纠正功能  
 [小灰灰](https://github.com/MiniGrayGay) 的人物武器信息api  
-### 环境
-请务必使用**Python3.7**以上版本！！ 
-尽量在linux下运行。  windows下可能会有各种报错。  
+### 环境 
+请务必使用**Python3.7**以上版本！！   
+
+尽量在linux下运行，windows下可能会有各种报错。  
 
 ### 更新记录  
 2021-4-7 更新武器资料,修复windows下路径bug  
