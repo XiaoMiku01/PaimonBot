@@ -1,0 +1,37 @@
+{
+    "display": "Xiaomi_Demo.2992",
+    "product": "xiaomi",
+    "device": "sagit",
+    "board": "Xiaomi",
+    "model": "MI 6",
+    "finger_print": "xiaomi/sagit/sagit:11/RKQ1.201004.002/21.2.24:user/release-keys",
+    "boot_id": "82026b26-6a4b-2530-081f-6b6db50c17da",
+    "proc_version": "Ubuntu version 5.4.61-qgki-g85c6012f7576",
+    "protocol": 0,
+    "imei": "510755011062520",
+    "brand": "Xiaomi_Demo",
+    "bootloader": "unlocked",
+    "base_band": "",
+    "version": {
+        "incremental": "21.2.24",
+        "release": "11",
+        "codename": "REL",
+        "sdk": 30
+    },
+    "sim_info": "T-Mobile",
+    "os_type": "android",
+    "mac_address": "00:50:56:C0:00:08",
+    "ip_address": [
+        10,
+        0,
+        1,
+        3
+    ],
+    "wifi_bssid": "00:50:56:C0:00:08",
+    "wifi_ssid": "Xiaomi_Demo",
+    "imsi_md5": "e8acdfb97734da9f2e7ed29a8ece7d7b",
+    "android_id": "7f295f969c701efd",
+    "apn": "wifi",
+    "vendor_name": "MIUI",
+    "vendor_os_name": "miui"
+}
