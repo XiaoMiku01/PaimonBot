@@ -22,7 +22,9 @@ password: "abc123"
 ```
 5.运行go-cqhttp  
 Windows下运行 go-cqhttp.exe  
-Linux下运行 ./go-cqhttplinux  
+Linux下运行 ./go-cqhttp
+arm架构或32位的go-cqhttp程序在other_releases内
+
 6.运行Bot.py  
 ```shell
 python3 bot.py
