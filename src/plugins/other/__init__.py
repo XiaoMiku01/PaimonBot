@@ -6,7 +6,7 @@ from random import choice
 poke = on_notice(rule=to_me())
 recall = on_notice()
 
-
+# 群聊
 @recall.handle()
 async def _(bot: Bot, event: GroupRecallNoticeEvent):
     if event.user_id != event.self_id:
@@ -14,8 +14,14 @@ async def _(bot: Bot, event: GroupRecallNoticeEvent):
         meg = await bot.get_msg(message_id=mid)
         re = '刚刚说了:' + meg['message'] + '\n不要以为派蒙没看见！'
         await recall.finish(message=Message(re), at_sender=True)
-
-
+# 私聊
+@recall.handle()
+async def _(bot: Bot, event: FriendRecallNoticeEvent):
+    if event.user_id != event.self_id:
+        mid = event.message_id
+        meg = await bot.get_msg(message_id=mid)
+        re = '刚刚说了:' + meg['message'] + '\n不要以为派蒙没看见！'
+        await recall.finish(message=Message(re))
 
 @poke.handle()
 async def _poke(bot: Bot, event: PokeNotifyEvent, state: dict) -> None:
