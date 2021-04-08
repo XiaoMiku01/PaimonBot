@@ -12,9 +12,9 @@ flashimg = on_message()
 # 群聊
 @recall.handle()
 async def _(bot: Bot, event: GroupRecallNoticeEvent):
-    if event.user_id != event.self_id and 'type=flash,' not in str(event.get_message()):
-        mid = event.message_id
-        meg = await bot.get_msg(message_id=mid)
+    mid = event.message_id
+    meg = await bot.get_msg(message_id=mid)
+    if event.user_id != event.self_id and 'type=flash,' not in meg['message']:
         re = '刚刚说了:' + meg['message'] + '\n不要以为派蒙没看见！'
         await recall.finish(message=Message(re), at_sender=True)
 
@@ -22,9 +22,10 @@ async def _(bot: Bot, event: GroupRecallNoticeEvent):
 # 私聊
 @recall.handle()
 async def _(bot: Bot, event: FriendRecallNoticeEvent):
-    if event.user_id != event.self_id and 'type=flash,' not in str(event.get_message()):
-        mid = event.message_id
-        meg = await bot.get_msg(message_id=mid)
+
+     mid = event.message_id
+     meg = await bot.get_msg(message_id=mid)
+     if event.user_id != event.self_id and 'type=flash,' not in meg['message']:
         re = '刚刚说了:' + meg['message'] + '\n不要以为派蒙没看见！'
         await recall.finish(message=Message(re))
 
