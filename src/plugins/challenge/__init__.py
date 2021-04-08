@@ -12,7 +12,7 @@ PATH = os.path.abspath('.')
 
 @zb.handle()
 async def _(bot: Bot, event: Event):
-    await zb.finish(message=Message(f'[CQ:image,file=file:////{PATH}/src/data/challenge/zb.png]'))
+    await zb.finish(message=Message(f'[CQ:image,file=file:///{PATH}/src/data/challenge/zb.png]'))
 
 
 @tf.handle()
