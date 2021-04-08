@@ -16,14 +16,6 @@ async def _(bot: Bot, event: GroupRecallNoticeEvent):
         await recall.finish(message=Message(re), at_sender=True)
 
 
-@recall.handle()
-async def _(bot: Bot, event: FriendRecallNoticeEvent):
-    if event.user_id != event.self_id:
-        mid = event.message_id
-        meg = await bot.get_msg(message_id=mid)
-        re = '刚刚说了:' + meg['message'] + '\n不要以为派蒙没看见！'
-        await recall.finish(message=Message(re))
-
 
 @poke.handle()
 async def _poke(bot: Bot, event: PokeNotifyEvent, state: dict) -> None:
