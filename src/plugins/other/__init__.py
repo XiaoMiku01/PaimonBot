@@ -1,27 +1,33 @@
-from nonebot import on_notice
-from nonebot.adapters.cqhttp import GroupRecallNoticeEvent, Bot, Message, FriendRecallNoticeEvent, PokeNotifyEvent
+from nonebot import on_notice, on_message
+from nonebot.adapters.cqhttp import GroupRecallNoticeEvent, Bot, Message, FriendRecallNoticeEvent, PokeNotifyEvent, \
+    MessageEvent
 from nonebot.rule import to_me
 from random import choice
 
 poke = on_notice(rule=to_me())
 recall = on_notice()
+flashimg = on_message()
+
 
 # 群聊
 @recall.handle()
 async def _(bot: Bot, event: GroupRecallNoticeEvent):
-    if event.user_id != event.self_id:
+    if event.user_id != event.self_id and 'type=flash,' not in str(event.get_message()):
         mid = event.message_id
         meg = await bot.get_msg(message_id=mid)
         re = '刚刚说了:' + meg['message'] + '\n不要以为派蒙没看见！'
         await recall.finish(message=Message(re), at_sender=True)
+
+
 # 私聊
 @recall.handle()
 async def _(bot: Bot, event: FriendRecallNoticeEvent):
-    if event.user_id != event.self_id:
+    if event.user_id != event.self_id and 'type=flash,' not in str(event.get_message()):
         mid = event.message_id
         meg = await bot.get_msg(message_id=mid)
         re = '刚刚说了:' + meg['message'] + '\n不要以为派蒙没看见！'
         await recall.finish(message=Message(re))
+
 
 @poke.handle()
 async def _poke(bot: Bot, event: PokeNotifyEvent, state: dict) -> None:
@@ -32,3 +38,11 @@ async def _poke(bot: Bot, event: PokeNotifyEvent, state: dict) -> None:
     ])
 
     await poke.finish(msg, at_sender=True)
+
+
+@flashimg.handle()
+async def _(bot: Bot, event: MessageEvent):
+    msg = str(event.get_message())
+    if 'type=flash,' in msg:
+        msg = msg.replace('type=flash,', '')
+        await flashimg.finish(message=Message("不要发闪照，好东西就要分享。" + msg), at_sender=True)
