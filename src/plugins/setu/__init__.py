@@ -23,7 +23,7 @@ async def _(bot: Bot, event: Event):
     key = str(event.get_message()).strip()
     pic = await ghs_pic3(key)
     try:
-        if cd > cdTime:
+        if cd > cdTime or event.get_user_id() in nonebot.get_driver().config.superusers::
             await setu.send('给大佬递图', at_sender=True)
             mid = await setu.send(message=Message(pic))
             print(mid)
