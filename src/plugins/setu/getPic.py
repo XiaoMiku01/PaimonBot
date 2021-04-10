@@ -10,15 +10,15 @@ else:
     proxy = 'disable'
 async def ghs_pic3(keyword='') -> str:
     async with AsyncClient() as client:
+        req_url = "https://api.lolicon.app/setu/"
+        params = {"apikey": apikey,
+                  "r18": 0,
+                  "size1200": 'true',
+                  'keyword': keyword,
+                  'proxy': proxy
+                  }
+        res = await client.get(req_url, params=params)
         try:
-            req_url = "https://api.lolicon.app/setu/"
-            params = {"apikey": apikey,
-                      "r18": 0,
-                      "size1200": 'true',
-                      'keyword': keyword,
-                      'proxy': proxy
-                      }
-            res = await client.get(req_url, params=params)
             setu_title = res.json()['data'][0]['title']
             setu_url = res.json()['data'][0]['url']
             base64 = await downPic(setu_url)
@@ -31,8 +31,12 @@ async def ghs_pic3(keyword='') -> str:
             # return local_img_url
             return pic
         except Exception as e:
+            print(res.text)
             print(e)
-            return f"图库中没有搜到关于{keyword}的图。"
+            if '额度限制' not in res.text:
+                return f"图库中没有搜到关于{keyword}的图。今日额度还剩下{res.json()['quota']}次。"
+            else:
+                return 'api调用已到达上限'
 
 
 async def downPic(url) -> str:

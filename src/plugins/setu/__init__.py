@@ -32,7 +32,7 @@ async def _(bot: Bot, event: Event):
             await setu.send(f'不要发的太快，冲多了对身体不好，你的CD还有{cdTime - cd}秒', at_sender=True)
     except Exception as e:
         print(e)
-        await setu.send(message=Message('消息被风控，或者api调用达到上限，派蒙不背锅'), at_sender=True)
+        await setu.send(message=Message('消息被风控，派蒙不背锅'), at_sender=True)
 
 
 @withdraw.handle()
