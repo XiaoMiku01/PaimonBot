@@ -9,7 +9,7 @@ import requests
 from httpx import AsyncClient
 import nonebot
 
-mhyVersion = "2.3.0"
+mhyVersion = "2.7.0"
 cookie_list = nonebot.get_driver().config.myscookie
 
 
@@ -20,11 +20,11 @@ def cache_Cookie():
 def md5(text):
     md5 = hashlib.md5()
     md5.update(text.encode())
-    return (md5.hexdigest())
+    return md5.hexdigest()
 
 
 def DSGet():
-    n = "h8w582wxwgqvahcdkpvdhbh2w9casgfl"
+    n = "fd3ykrh7o1j54g581upo1tvpam0dsgtf"
     i = str(int(time.time()))
     r = ''.join(random.sample(string.ascii_lowercase + string.digits, 6))
     c = md5("salt=" + n + "&t=" + i + "&r=" + r)
@@ -44,7 +44,7 @@ async def GetInfo(Uid, ServerID="cn_gf01"):
                     'Origin': 'https://webstatic.mihoyo.com',
                     'x-rpc-app_version': mhyVersion,
                     'User-Agent': 'Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/39.0.0.0 Mobile Safari/537.36 miHoYoBBS/2.2.0',
-                    'x-rpc-client_type': '5',
+                    'x-rpc-client_type': '2',
                     'Referer': 'https://webstatic.mihoyo.com/app/community-game-records/index.html?v=6',
                     'Accept-Encoding': 'gzip, deflate',
                     'Accept-Language': 'zh-CN,en-US;q=0.8',
