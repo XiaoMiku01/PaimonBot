@@ -9,6 +9,7 @@
 尽量在linux下运行，windows下可能会有各种报错。  
 
 ### 更新记录  
+2021-5-2 更新1.5版本周本材料
 2021-4-29 修复米游社资料查询失败  
 2021-4-9 修复CD bug ,增加防闪照，新撤回涩图机制用法 回复Bot:撤回@发涩图指令的人  
 2021-4-7 更新武器资料,修复windows下路径bug  
@@ -35,7 +36,7 @@ pip3 install -r requirements.txt
 python3 bot.py
 ```
 5.~~在config.hjson文件中设置Bot的QQ账号密码~~  
-go-cqhttp更新，不需要填账号密码，直接右键打开.exe文件（windows下，其他系统请在[go-cqhttp](https://github.com/Mrs4s/go-cqhttp/releases/tag/v1.0.0-beta2) 下载），扫码登录  
+go-cqhttp更新，不需要填账号密码，直接右键打开.exe文件（其他系统请在[go-cqhttp](https://github.com/Mrs4s/go-cqhttp/releases/tag/v1.0.0-beta2) 下载注意版本为1.0），扫码登录  
 
 6.搭建成功，发送help获取菜单  
 <img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/help.png" width="250px" />  
