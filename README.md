@@ -31,12 +31,15 @@ pip3 install -r requirements.txt
 ```  
 3.在.env和.env.dev文件中设置所需的cookie和SUPERUSERS(超级用户)  
 
-4.运行Bot.py  
+4.配置go-cqhttp 详细请观看[go-cqhttp官方文档](https://docs.go-cqhttp.org/)和[nonebot2官方文档](https://v2.nonebot.dev/)   
+注意！！PaimonBot连接端口为9898  
+注意！！PaimonBot连接端口为9898  
+注意！！PaimonBot连接端口为9898  
+
+5.运行Bot.py  
 ```shell
 python3 bot.py
 ```
-5.~~在config.hjson文件中设置Bot的QQ账号密码~~  
-go-cqhttp更新，不需要填账号密码，直接右键打开.exe文件（其他系统请在[go-cqhttp](https://github.com/Mrs4s/go-cqhttp/releases/tag/v1.0.0-beta2) 下载注意版本为1.0），扫码登录  
 
 6.搭建成功，发送help获取菜单  
 <img src="https://github.com/XiaoMiku01/PaimonBot/blob/main/doc/help.png" width="250px" />  
