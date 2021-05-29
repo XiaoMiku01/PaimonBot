@@ -20,3 +20,10 @@ dist/
 *.egg-info/
 *.dist-info/
 /.idea/
+
+# IDE config
+.idea
+
+
+# Virtual environment
+venv

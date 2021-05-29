@@ -1,11 +1,11 @@
-from PIL import Image, ImageDraw, ImageFont
+import base64
+import json
+import os
+import random
+import time
 from io import BytesIO
 
-import os
-import json
-import random
-import base64
-import time
+from PIL import Image, ImageDraw, ImageFont
 
 FILE_PATH = './src/data/almanac'
 FONT_PATH = os.path.join(FILE_PATH, "汉仪文黑.ttf")

@@ -1,13 +1,16 @@
-from httpx import AsyncClient
 import base64
-import nonebot
 from re import findall
+
+import nonebot
+from httpx import AsyncClient
 
 apikey = nonebot.get_driver().config.apikey
 if nonebot.get_driver().config.setuproxy == 'True':
     proxy = 'i.pixiv.cat'
 else:
     proxy = 'disable'
+
+
 async def ghs_pic3(keyword='') -> str:
     async with AsyncClient() as client:
         req_url = "https://api.lolicon.app/setu/"
@@ -24,7 +27,7 @@ async def ghs_pic3(keyword='') -> str:
             base64 = await downPic(setu_url)
             setu_pid = res.json()['data'][0]['pid']
             setu_author = res.json()['data'][0]['author']
-            pic ="[CQ:image,file=base64://" + base64 + "]"
+            pic = "[CQ:image,file=base64://" + base64 + "]"
             local_img_url = "title:" + setu_title + "[CQ:image,file=base64://" + base64 + "]" + "pid:" + str(
                 setu_pid) + " 画师:" + setu_author
             # return setu_url

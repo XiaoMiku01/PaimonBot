@@ -1,5 +1,6 @@
 from nonebot import on_command
 from nonebot.adapters.cqhttp import Bot, Event
+
 from .run import run
 
 runcode = on_command('super')
