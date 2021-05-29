@@ -1,5 +1,7 @@
 import random
+from base64 import b64encode
 
+import requests
 from nonebot import on_notice, on_message
 from nonebot.adapters.cqhttp import GroupRecallNoticeEvent, Bot, Message, FriendRecallNoticeEvent, PokeNotifyEvent, \
     MessageEvent, GroupMessageEvent
@@ -8,8 +10,8 @@ from nonebot.rule import to_me
 last_message = ''
 poke = on_notice(rule=to_me(), block=False)
 recall = on_notice(block=False)
-flashimg = on_message(block=False)
-blockrepeat = on_message(block=False)
+flash_img = on_message(block=False)
+block_repeat = on_message(block=False)
 
 
 # 群聊
@@ -43,21 +45,34 @@ async def _poke(bot: Bot, event: PokeNotifyEvent, state: dict) -> None:
     await poke.finish(msg, at_sender=True)
 
 
-@flashimg.handle()
+@flash_img.handle()
 async def _(bot: Bot, event: MessageEvent):
     msg = str(event.get_message())
     if 'type=flash,' in msg:
         msg = msg.replace('type=flash,', '')
-        await flashimg.finish(message=Message("不要发闪照，好东西就要分享。" + msg), at_sender=True)
+        await flash_img.finish(message=Message("不要发闪照，好东西就要分享。" + msg), at_sender=True)
 
 
-@blockrepeat.handle()
+@block_repeat.handle()
 async def _(bot: Bot, event: GroupMessageEvent):
     global last_message
-    message = (event.get_message())
+    message = str(event.get_message())
+    # await bot.send(event, str(message))
+    # await bot.send(event, str("CQ:image" in message and "url=" in message))
     if message == last_message:
         tem = "打断复读" + random.randint(1, 10) * '!'
         last_message = tem
-        await blockrepeat.finish(message=tem)
+        await block_repeat.finish(message=tem)
+    elif "CQ:image" in message and "url=" in message and b64encode(requests.get(str(message)
+                                                                                [str(message).find("url=")
+                                                                                 + 4:-1]).content) \
+            .decode() == last_message:
+        tem = "打断复读" + random.randint(1, 10) * '!'
+        last_message = tem
+        await block_repeat.finish(message=tem)
     else:
-        last_message = message
+        if "CQ:image" in message and "url=" in message:
+            last_message = b64encode(requests.get(str(message)[str(message).
+                                                  find("url=") + 4:-1]).content).decode()
+        else:
+            last_message = message
