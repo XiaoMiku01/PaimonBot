@@ -1,7 +1,8 @@
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import time
-from io import BytesIO
 from base64 import b64encode
+from io import BytesIO
+
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 from .getData import GetInfo
 
