@@ -16,8 +16,8 @@
 
 ### 更新记录
 
-2021-5-22 更新1.5下版本材料（替换src/data文件夹即可）  
-2021-5-2 更新1.5版本周本材料  
+2021-5-29 防刷屏功能<br>
+2021-5-22 更新1.5下版本材料（替换src/data文件夹即可） 2021-5-2 更新1.5版本周本材料  
 2021-4-29 修复米游社资料查询失败  
 2021-4-9 修复CD bug ,增加防闪照，新撤回涩图机制用法 回复Bot:撤回@发涩图指令的人  
 2021-4-7 更新武器资料,修复windows下路径bug  
@@ -45,7 +45,7 @@ pip3 install -r requirements.txt
 
 3.在.env和.env.dev文件中设置所需的cookie和SUPERUSERS(超级用户)
 
-4.配置go-cqhttp 详细请观看[go-cqhttp官方文档](https://docs.go-cqhttp.org/)和[nonebot2官方文档](https://v2.nonebot.dev/)   
+4.配置go-cqhttp 详细请观看[go-cqhttp官方文档](https://docs.go-cqhttp.org/) 和 [nonebot2官方文档](https://v2.nonebot.dev/)   
 注意！！PaimonBot连接端口为9898  
 注意！！PaimonBot连接端口为9898  
 注意！！PaimonBot连接端口为9898

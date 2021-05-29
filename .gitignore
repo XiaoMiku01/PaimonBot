@@ -24,6 +24,8 @@ dist/
 # IDE config
 .idea
 
-
 # Virtual environment
 venv
+
+# test
+test
