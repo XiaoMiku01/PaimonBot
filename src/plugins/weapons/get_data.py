@@ -42,10 +42,7 @@ async def get_weapon(name: str) -> str:
     if len(correct_result) > 1:
         return f"派蒙这里没找到武器{name}，你是要搜索如下的武器吗?\n{montage_result(correct_result)}"
     elif len(correct_result) < 1:
-        return "没有找到该武器,派蒙也米有办法！是不是名字错了？[CQ:image,file=de039db103c31286664f761ff0252cc3.image," \
-               "url=http://c2cpicdw.qpic.cn/offpic_new/1561900932//1561900932-292137392" \
-               "-DE039DB103C31286664F761FF0252CC3" \
-               "/0?term=3] "
+        return "没有找到该武器,派蒙也米有办法！是不是名字错了？[CQ:image,file=de039db103c31286664f761ff0252cc3.image,url=https://c2cpicdw.qpic.cn/offpic_new/1561900932//1561900932-292137392-DE039DB103C31286664F761FF0252CC3/0?term=3] "
     else:
         return f"派蒙这里没找到武器{name}，你是要搜索{correct_result[0]}吗"
 
