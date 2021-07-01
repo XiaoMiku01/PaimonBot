@@ -1,6 +1,4 @@
-# import nonebot
 from .data_source import dataGet, dataProcess
-from nonebot.permission import Permission
 from nonebot.adapters import Bot, Event
 from nonebot.typing import T_State
 from nonebot import on_command
