@@ -1,8 +1,14 @@
 ## 派蒙Bot / PaimonBot
 
 基于[Mrs4s](https://github.com/Mrs4s) / [go-cqhttp](https://github.com/Mrs4s/go-cqhttp)
-和 [nonebot](https://github.com/nonebot) / [nonebot2](https://github.com/nonebot/nonebot2) 的原神QQ群聊机器人
+和 [nonebot](https://github.com/nonebot) / [nonebot2](https://github.com/nonebot/nonebot2) 的原神QQ群聊机器人  
 
+# 作者已退游 项目停止维护 感谢大家的支持  
+#### 小引一波 
+推荐关注几个非常可爱有趣的女孩！ 
+欢迎B站搜索:  
+[@嘉然今天吃什么](https://space.bilibili.com/672328094/)&emsp;[@向晚大魔王](https://space.bilibili.com/672346917/)&emsp;&emsp;[@乃琳Queen](https://space.bilibili.com/672342685/)&emsp;&emsp;&emsp;[@贝拉kira](https://space.bilibili.com/672353429/)&emsp;&emsp;&emsp;[@珈乐Carol](https://space.bilibili.com/351609538/)</br>
+<img src="https://i2.hdslb.com/bfs/face/d399d6f5cf7943a996ae96999ba3e6ae2a2988de.jpg@128w_128h_1o.webp" /><img src="https://i0.hdslb.com/bfs/face/566078c52b408571d8ae5e3bcdf57b2283024c27.jpg@128w_128h_1o.webp" /><img src="https://i1.hdslb.com/bfs/face/8895c87082beba1355ea4bc7f91f2786ef49e354.jpg@128w_128h_1o.webp" /><img src="https://i2.hdslb.com/bfs/face/668af440f8a8065743d3fa79cfa8f017905d0065.jpg@128w_128h_1o.webp" /><img src="https://i1.hdslb.com/bfs/face/a7fea00016a8d3ffb015b6ed8647cc3ed89cbc63.jpg@128w_128h_1o.webp" />
 #### 特别鸣谢
 
 [MingxuanGame](https://github.com/MingxuanGame) 的人物武器名字自动纠正功能  
