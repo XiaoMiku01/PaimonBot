@@ -20,7 +20,7 @@ def nic2name(name):
 
 def get_json(name: str) -> dict:
     name = nic2name(name)
-    res = requests.get(f'https://genshin.minigg.cn/?data={name}')
+    res = requests.get(f'https://genshin.minigg.cn/?data={name}', timeout=30)
     soup = bs4.BeautifulSoup(res.text, "lxml").body
     character_json = json.loads(soup.text)
     return character_json
